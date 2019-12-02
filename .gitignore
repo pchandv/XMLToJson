@@ -3,3 +3,5 @@
 ################################################################################
 
 /XmlToJson/obj/Debug
+/XmlToJson/bin/Debug
+/.vs/XmlToJson/v15/Server/sqlite3
