@@ -17,12 +17,13 @@ namespace XmlToJson
             var xml = @"
                         <Invoice>
                             <EmployeeID>1002941</EmployeeID>
-                            <User FirstName='Johnny' SurName='Abhrama' />
+                            <User FirstName='Johnny' SurName='Abhrama'>
                             <LastName>Dep</LastName>
+                            </User>
                             <TimeStamp>1/1/2017 00:01</TimeStamp>
                         </Invoice>";
-
-            Console.WriteLine(GetModelFromJson(ConvertToJson(ReadXML(xml))));
+            var m = GetModelFromJson(ConvertToJson(ReadXML(xml)));
+            Console.WriteLine(m);
             Console.Read();
 
 
@@ -47,7 +48,7 @@ namespace XmlToJson
     {
         public int EmployeeID { get; set; }
         public User User { get; set; }
-        public string LastName { get; set; }
+       
         public DateTime Timestamp { get; set; }
     }
     public class User
@@ -56,5 +57,6 @@ namespace XmlToJson
         public string FirstName { get; set; }
         [JsonProperty("@SurName")]
         public string SurName { get; set; }
+        public string LastName { get; set; }
     }
 }
